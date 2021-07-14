@@ -1,0 +1,2 @@
+rootProject.name = "cleardil-sdk-android-example"
+include ':app'

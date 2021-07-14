@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">cleardil-sdk-android-example</string>
+    <string name="action_settings">Settings</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">ClearDil Sdk Example</string>
+    <string name="authenticate">Authenticate</string>
+
+    <string name="hello_first_fragment">Hello ! Click on the button to start using cleardil-sdk</string>
+</resources>
