@@ -72,10 +72,14 @@ dependencies {
 ```java
 KycModule.builder()
         .withSdkToken("<yourtoken>")
+        .withEnvironment(KycModule.Environment.Demo)
         .build()
         .start(MyActivity.this);
 ```
 This code will instantiate the ClearDil Kyc Module and start it.
+You will need to replace <yourtoken> by your SDK Token.
+You will also need to specify the Cleardil Environment (PROD, SANDBOX or DEMO) you want to connect to.
+Use the Demo environment if you do not want to connect to Cleardil Environment.
 
 ### Advanced parameters
 - You can specify which type of document is allowed for your clients with theses methods :

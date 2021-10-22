@@ -33,7 +33,8 @@ public class FirstFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 KycModule.builder()
-                        .withSdkToken("pouet")
+                        .withSdkToken("123456789-azerty-lmnop")
+                        .withEnvironment(KycModule.Environment.Demo)
                         .allowIdentityCard()
                         .build()
                         .start(getActivity());
