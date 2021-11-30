@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -15,6 +16,7 @@ import com.cleardil.sdk.android_example.databinding.FragmentFirstBinding;
 public class FirstFragment extends Fragment {
 
     private FragmentFirstBinding binding;
+    private int sdkCode;
 
     @Override
     public View onCreateView(
@@ -23,12 +25,18 @@ public class FirstFragment extends Fragment {
     ) {
 
         binding = FragmentFirstBinding.inflate(inflater, container, false);
+        
         return binding.getRoot();
-
     }
 
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+        this.sdkCode = getActivity().getIntent().getIntExtra(KycModule.RESULT_CODE, -1);
+
+        TextView textView = view.findViewById(R.id.textview_first);
+        textView.setText(R.string.hello_first_fragment + " " + this.sdkCode);
+
         binding.buttonAuthenticate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -36,8 +44,10 @@ public class FirstFragment extends Fragment {
                         .withSdkToken("123456789-azerty-lmnop")
                         .withEnvironment(KycModule.Environment.Demo)
                         .allowIdentityCard()
+                        .withTargetActivity(MainActivity.class)
                         .build()
                         .start(getActivity());
+
             }
         });
     }
