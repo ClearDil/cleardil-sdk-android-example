@@ -1,0 +1,11 @@
+@startuml
+
+entity "Your Current Activity" as yca
+entity "Cleardil Kyc Sdk" as cks
+entity "Your Next Activity" as yna
+
+yca -> cks : Launches
+cks -> cks : KYC process
+cks -> yna : Launches
+
+@enduml

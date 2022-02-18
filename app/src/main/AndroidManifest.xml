@@ -10,6 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Cleardilsdkandroidexample">
         <activity
+            android:exported="true"
             android:name=".MainActivity"
             android:label="@string/app_name"
             android:theme="@style/Theme.Cleardilsdkandroidexample.NoActionBar">
@@ -20,6 +21,7 @@
             </intent-filter>
         </activity>
         <activity
+            android:exported="true"
             android:name="io.flutter.embedding.android.FlutterActivity"
             android:theme="@android:style/Theme"
             android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"

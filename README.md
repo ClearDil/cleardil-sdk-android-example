@@ -2,6 +2,17 @@
 ClearDil cross-platform SDK
 
 # Integrate our SDK into your Android project
+
+## Lifecycle explanation
+
+Our SDK is using the classic Android activity lifecycle in order to run.
+
+Which means your Activity will run our SDK activity and then our SDK will run your next activity.
+
+Example with a login / home page mechanism :
+
+![](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.github.com/ClearDil/cleardil-sdk-android-example/main/explanation.puml)
+
 ## Adding Cleardil repository to gradle
 - First you will need to specify your credentials to Cleardil artifactory repository in the `gradle.properties` file :
 ```property
@@ -73,6 +84,7 @@ dependencies {
 KycModule.builder()
         .withSdkToken("<yourtoken>")
         .withEnvironment(KycModule.Environment.Demo)
+        .withTargetActivity(HomeActivity.class)
         .build()
         .start(MyActivity.this);
 ```
@@ -80,6 +92,8 @@ This code will instantiate the ClearDil Kyc Module and start it.
 You will need to replace <yourtoken> by your SDK Token.
 You will also need to specify the Cleardil Environment (PROD, SANDBOX or DEMO) you want to connect to.
 Use the Demo environment if you do not want to connect to Cleardil Environment.
+
+As explained before you will need to specify an Activity class which will be launched at the end of the Cleardil SDK.
 
 ### Advanced parameters
 - You can specify which type of document is allowed for your clients with theses methods :
@@ -95,6 +109,7 @@ KycModule.builder()
         .withSdkToken("<yourtoken>")
         .allowIdentityCard()
         .allowDriverLicense()
+        .withTargetActivity(HomeActivity.class)
         .build()
         .start(MyActivity.this);
 ```

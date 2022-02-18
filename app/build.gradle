@@ -3,13 +3,13 @@ plugins {
 }
 
 android {
-    compileSdkVersion 30
+    compileSdkVersion 31
     buildToolsVersion "30.0.3"
 
     defaultConfig {
         applicationId "com.cleardil.sdk.android_example"
         minSdkVersion 28
-        targetSdkVersion 30
+        targetSdkVersion 31
         versionCode 1
         versionName "1.0"
 
@@ -45,7 +45,7 @@ android {
 }
 
 dependencies {
-    implementation 'com.cleardil.sdk:cleardil_android_sdk:1.0.0'
+    implementation 'com.cleardil.sdk:cleardil_android_sdk:1.2.1'
     implementation 'androidx.appcompat:appcompat:1.2.0'
     implementation 'com.google.android.material:material:1.2.1'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.1'

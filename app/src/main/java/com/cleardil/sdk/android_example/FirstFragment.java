@@ -35,7 +35,7 @@ public class FirstFragment extends Fragment {
         this.sdkCode = getActivity().getIntent().getIntExtra(KycModule.RESULT_CODE, -1);
 
         TextView textView = view.findViewById(R.id.textview_first);
-        textView.setText(R.string.hello_first_fragment + " " + this.sdkCode);
+        textView.setText(getText(R.string.hello_first_fragment) + " " + this.sdkCode);
 
         binding.buttonAuthenticate.setOnClickListener(new View.OnClickListener() {
             @Override
